@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mati Lampu...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #jumpscare {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            animation: flash 0.1s infinite;
+        }
+
+        img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        @keyframes flash {
+            0%, 100% { background-color: black; }
+            50% { background-color: white; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Bagian Jumpscare -->
+<div id="jumpscare">
+    <img src="https://your-pocong-image-link.jpg" alt="Pocong">
+</div>
+
+<!-- Suara Kuntilanak -->
+<audio id="scream" src="https://your-kuntilanak-audio-link.mp3"></audio>
+
+<script>
+    setTimeout(() => {
+        const jumpscare = document.getElementById("jumpscare");
+        const scream = document.getElementById("scream");
+
+        // Tampilkan gambar dan mainkan suara
+        jumpscare.style.display = "flex";
+        scream.play();
+    }, 5000); // Tunda 5 detik untuk efek kejutan
+</script>
+
+</body>
+</html>
